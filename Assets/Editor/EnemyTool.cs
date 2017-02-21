@@ -219,6 +219,10 @@ public class EnemyTool : EditorWindow {
         enemyList[currentChoice - 1].def = enemyDefence;
         enemyList[currentChoice - 1].isMagic = isMagic;
         enemyList[currentChoice - 1].manaPool = enemyMana;
+
+        //This allows the code to save assets that already exist
+        EditorUtility.SetDirty(enemyList[currentChoice - 1]);
+        AssetDatabase.SaveAssets();
     }
 
     private void flagReset()
